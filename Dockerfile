@@ -3,8 +3,13 @@ FROM php:8.1-apache
 # Habilita mod_rewrite para URLs amigáveis
 RUN a2enmod rewrite
 
-# Instala extensões necessárias
+# Instala extensões necessárias do PHP
 RUN docker-php-ext-install pdo pdo_mysql
+
+# Instala git e unzip, que o Composer precisa
+RUN apt-get update && \
+    apt-get install -y git unzip && \
+    apt-get clean
 
 # Instala o Composer dentro do container
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
@@ -14,10 +19,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 # Define diretório de trabalho
 WORKDIR /var/www/html
 
-# Copia o arquivo de configuração Apache para substituir o padrão
+# Copia o arquivo de configuração Apache
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
-# Copia o código do projeto para dentro do container
+# Copia o código da aplicação
 COPY . /var/www/html/
 
 # Instala as dependências com Composer
