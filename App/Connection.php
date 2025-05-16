@@ -5,7 +5,7 @@ class Connection {
     public static function getDb() {
         try {
             $conn = new \PDO(
-                "mysql:host=" . getenv('MYSQLHOST') . ";port=" . getenv('MYSQLPORT') . ";dbname=" . getenv('MYSQLDATABASE') . ";charset=utf8",
+                "mysql:host=" . getenv('MYSQLHOST') . ";dbname=" . getenv('MYSQLDATABASE') . ";charset=utf8",
                 getenv('MYSQLUSER'),
                 getenv('MYSQLPASSWORD')
             );
