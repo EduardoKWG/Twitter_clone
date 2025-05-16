@@ -1,12 +1,12 @@
 {
-	"name": "miniframework",
+	"name": "eduardokwg/twitter-clone",
 	"require": {
 		"php": ">= 7.0"
 	},
 	"authors": [
 		{
-			"name": "Jorge Sant Ana",
-			"email": "jorge@teste.com.br"
+			"name": "eduardokwgtwitter/twitter_clone",
+			"email": "eduardo@teste.com.br"
 		}
 	],
 	"autoload": {
