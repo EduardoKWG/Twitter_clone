@@ -1,0 +1,10 @@
+# Ignorar a pasta vendor (dependências do Composer)
+vendor/
+
+# Ignorar arquivos de log e cache
+*.log
+*.cache
+
+# Ignorar arquivos temporários do sistema
+.DS_Store
+Thumbs.db
