@@ -2,12 +2,18 @@
 
 namespace MF\Init;
 
+use Dotenv\Dotenv;
+
 abstract class Bootstrap {
 	private $routes;
 
 	abstract protected function initRoutes(); 
 
 	public function __construct() {
+		// Carrega o dotenv da raiz do projeto 
+		$dotenv = Dotenv::createImmutable(__DIR__ . '/../../../'); 
+		$dotenv->load();
+		
 		$this->initRoutes();
 		$this->run($this->getUrl());
 	}

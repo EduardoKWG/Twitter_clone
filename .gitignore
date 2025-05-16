@@ -1,10 +1,22 @@
-# Ignorar a pasta vendor (dependências do Composer)
-vendor/
+# Ignorar dependências do Composer
+/vendor/
 
-# Ignorar arquivos de log e cache
+# Ignorar arquivos de configuração sensíveis
+.env
+
+# Ignorar arquivos de cache, logs e temporários
 *.log
 *.cache
+*.tmp
 
-# Ignorar arquivos temporários do sistema
+# Ignorar arquivos criados por editores/IDE
+*.swp
+*.swo
+*.bak
+*.orig
+*.idea/
+.vscode/
+
+# Ignorar arquivos de sistema
 .DS_Store
 Thumbs.db
