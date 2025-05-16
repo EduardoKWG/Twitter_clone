@@ -14,12 +14,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 # Define diretório de trabalho
 WORKDIR /var/www/html
 
-# Copia arquivos públicos para pasta padrão do Apache
-COPY public/ /var/www/html/
-
-# Copia arquivos do app e do composer (sem o vendor)
-COPY App/ /var/www/html/App/
-COPY composer.json composer.lock /var/www/html/
+COPY . /var/www/html/
 
 # Instala as dependências com Composer
 RUN composer install --no-dev --optimize-autoloader
