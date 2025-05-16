@@ -14,6 +14,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 # Define diretório de trabalho
 WORKDIR /var/www/html
 
+# Copia o arquivo de configuração Apache para substituir o padrão
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
+
+# Copia o código do projeto para dentro do container
 COPY . /var/www/html/
 
 # Instala as dependências com Composer
