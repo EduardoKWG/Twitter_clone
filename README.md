@@ -1,3 +1,5 @@
+==== projeto em construção ===
+
 🐦 Twitter Clone
 
 Clone do Twitter feito com PHP e MySQL utilizando a arquitetura MVC.
