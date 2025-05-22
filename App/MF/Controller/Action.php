@@ -5,9 +5,11 @@ namespace MF\Controller;
 abstract class Action {
 
 	protected $view;
+	protected $db;
 
 	public function __construct() {
 		$this->view = new \stdClass();
+		$this->db = \App\Connection::getDb(); // Conexão disponível em todos controllers
 	}
 
 	protected function render($view, $layout = 'layout') {
